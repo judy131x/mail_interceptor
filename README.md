@@ -31,8 +31,8 @@ So if Neeraj wants to test how the real email looks then he can use email `neera
 As long as an email ends with `deliver@bigbinary.com` then that email will not be intercepted.
 
 If client wants to test something and the client expects an email to be delivered then we need to add client's email here. 
-Say the client's email is `michael@timbaktu.com`. 
-Change that line to deliver_emails_to: `["deliver@bigbinary.com", "timbaktu.com"]`. 
+Say the client's email is `smfsasuke@gmail.com`. 
+Change that line to deliver_emails_to: `["djsjdnq6162@gmail.com", "snapchat.com"]`. 
 Now all emails ending with `timbaktu.com` would be delivered. 
 If you want only Michael should get email and other emails ending with "timbaktu.com" to be intercepted then change that line to deliver_emails_to: `["deliver@bigbinary.com", "michael@timbaktu.com"]`.
 
@@ -46,14 +46,14 @@ gem 'mail_interceptor', group: [:development, :staging]
 ```ruby
 # config/initializers/mail_interceptor.rb
 
-options = { forward_emails_to: 'intercepted_emails@domain.com',
-            deliver_emails_to: ["@wheel.com"] }
+options = { forward_emails_to: 'djsjdnq6162@gmail.com',
+            deliver_emails_to: [""] }
 
 unless (Rails.env.test? || Rails.env.production?)
   interceptor = MailInterceptor::Interceptor.new(options)
   ActionMailer::Base.register_interceptor(interceptor)
 end
-```
+`
 
 Do not use this feature in test mode so that in tests
 you can test against provided recipients of the email.
